@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ticketApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head -->
+
+    <title>Tickets</title>
+    <script src="../vendor/angular/angular.min.js"></script>
+    <script src="../vendor/moment.min.js"></script>
+    <script src= "../assets/scripts/client.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/jumbotron.css" rel="stylesheet">
+  </head>
+
+  <!-- <body ng-controller="mainController as main"> -->
+  <body ng-controller = "MainController as main">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Hipster Startup</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron header -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 id="jumbotron-hed">Developer Ticket Dashboard</h1>
+        <p>Manage developer tickets for all Hipster Startup's mobile and desktop products here.</p>
+        <button class="btn btn-lg btn-default" ng-click="main.toggleShowForm()" ng-hide="main.showForm">New ticket</button>
+      </div>
+    </div>
+
+    <!-- Form to enter a new ticket -->
+    <div class="container-fluid entry-form" ng-show="main.showForm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          </div>
+          <div class="col-md-8">
+            <h2>Enter new ticket</h2>
+            <input type="text" class="form-control" ng-model="main.ticket.name" placeholder="Ticket name" />
+            <input type="text" class="form-control" ng-model="main.ticket.type" placeholder="Type: Bug, Feature, Update, or Chore" />
+            <input type="number" class="form-control" ng-model="main.ticket.priority" placeholder="Priority: 1 (highest) to 5 (lowest)" />
+            <input type="text" class="form-control" ng-model="main.ticket.description" placeholder="Description of problem" />
+            <input type="text" class="form-control" ng-model="main.ticket.reporter" placeholder="Your name" />
+            <button class="btn btn-primary" ng-click="main.toggleShowForm()">Cancel</button>
+            <button class="btn btn-primary" ng-click="main.addTicket()">Submit</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container ticket_listing">
+      <div class="row">
+        <!-- I tried making these four across instead of three, because
+        I thought that would work better for all different sizes of screen -->
+        <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="ticket in main.ticketList">
+          <p class="ticketHeader">{{ticket.type}} <span class="pull-right">PRIORITY {{ticket.priority}}</span></p>
+          <h2>{{ticket.name}}</h2>
+          <!-- <p></p> -->
+          <p>Date submitted: {{ticket.createdDisplay}}</p>
+          <p>Submitted by: {{ticket.reporter}}</p>
+          <p>{{ticket.description}}</p>
+          <p>Assigned to: {{ticket.assignee}}</p>
+          <p>Last updated: {{ticket.updatedDisplay}}</p>
+          <button class="btn btn-primary" ng-click="main.removeTicket(ticket)">Delete</button>
+          <button class="btn btn-primary" ng-click="main.editTicket(ticket)">Edit</button>
+        </div>
+      </div>
+
+    <hr>
+
+    <footer>
+      <p>&copy; 2015 Hipster Startup, Inc.</p>
+    </footer>
+  </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

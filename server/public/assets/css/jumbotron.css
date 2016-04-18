@@ -1,0 +1,67 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #ACCFCC;
+}
+
+.navbar-inverse {
+  background-color: #8A0917;
+  border-color: #8A0917;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-brand:hover {
+  color: #B8AE9C;
+}
+
+.jumbotron {
+  background-color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  color: #595241;
+}
+
+.entry-form {
+  background-color: #B8AE9C;
+}
+
+.entry-form h2, ticket_listing h2 {
+  color: #595241;
+}
+
+.btn.btn-primary {
+  background-color: #595241;
+  border-color: #595241;
+  margin: 6px 6px 24px 0;
+}
+
+.form-control {
+  margin: 6px 6px 6px 0;
+}
+
+.ticket_listing {
+  margin-top: 48px;
+}
+
+.ticketHeader {
+  padding: 4px 10px;
+  font-size: 12px;
+  text-align: left;
+  background-color:#FFFFFF;
+  border-radius: 4px;
+  color: #ACCFCC;
+  /*TODO: Color code tickets by priority*/
+}
+
+/*Color scheme
+Dark tan 595241
+Tan B8AE9C
+Beigeish FFFFFF
+Light aqua ACCFCC
+Dark red 8A0917*/
