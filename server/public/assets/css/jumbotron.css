@@ -29,6 +29,7 @@ body {
 
 .entry-form {
   background-color: #B8AE9C;
+  /*TODO: Pretty animation on entry form show*/
 }
 
 .entry-form h2, ticket_listing h2 {
@@ -47,6 +48,12 @@ body {
 
 .ticket_listing {
   margin-top: 48px;
+}
+
+.ticket_listing input {
+  background-color: #ACCFCC;
+  border: 0px;
+  outline: none;
 }
 
 .ticketHeader {

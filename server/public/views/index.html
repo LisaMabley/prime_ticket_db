@@ -70,7 +70,7 @@
           <p>Date submitted: {{ticket.createdDisplay}}</p>
           <p>Submitted by: {{ticket.reporter}}</p>
           <p>{{ticket.description}}</p>
-          <p>Assigned to: {{ticket.assignee}}</p>
+          <p>Assigned to: <input type="text" value="{{ticket.assignee}}"/></p>
           <p>Last updated: {{ticket.updatedDisplay}}</p>
           <button class="btn btn-primary" ng-click="main.removeTicket(ticket)">Delete</button>
           <button class="btn btn-primary" ng-click="main.editTicket(ticket)">Edit</button>

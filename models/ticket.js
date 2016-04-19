@@ -24,6 +24,7 @@ var ticketSchema = new Schema({
     required: true
   },
   assignee: String,
+
   reporter: {
     type: String,
     required: true
@@ -37,7 +38,13 @@ var ticketSchema = new Schema({
     default: Date.now
   },
   createdDisplay: String,
-  updatedDisplay: String
+
+  updatedDisplay: String,
+
+  editable: {
+    type: Boolean,
+    default: false
+  }
 });
 
 // Connect ticket schema to MongoDB
